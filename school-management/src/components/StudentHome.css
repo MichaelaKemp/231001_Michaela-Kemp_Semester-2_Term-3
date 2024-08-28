@@ -1,0 +1,132 @@
+.student-home-wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.side-navbar {
+    background-color: #2C3E50;
+    width: 200px;
+    height: 100vh;
+    padding: 1rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin-bottom: 2rem; /* Space for the logo */
+    padding: 1rem 0;
+}
+
+.logo {
+    width: 100px; /* Adjust based on your logo size */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure links take up full width */
+    text-align: center;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+.dashboard-wrapper {
+    margin-left: 200px; /* Account for sidebar width */
+    width: calc(100% - 200px); /* Ensure the main content takes the rest of the width */
+    padding: 0;
+}
+
+.dashboard-header {
+    padding: 1rem 2rem; /* Adjust padding to position correctly */
+    text-align: left; /* Ensure the text aligns to the left */
+    position: fixed;
+    top: 0;
+    left: 200px; /* Align it next to the sidebar */
+    right: 0; /* Extend to the right edge */
+    z-index: 500; /* Keep it on top of other content */
+    border-bottom: none; /* Remove any additional border */
+}
+
+.dashboard-header h1 {
+    font-size: 3rem; /* Make the font size larger */
+    color: #333333;
+    margin: 0;
+    padding-bottom: 0.5rem; /* Add space below the header */
+    padding-left: 2rem; /* Align with the dividing line */
+}
+
+.dashboard-header::after {
+    content: "";
+    display: block;
+    width: calc(100% - 4rem); /* Leave space on both sides */
+    margin: 0 auto;
+    height: 2px;
+    background-color: #ccc; /* The dividing line color */
+    position: relative;
+    bottom: -1rem;
+}
+
+.dashboard {
+    padding: 6rem 2rem 2rem 2rem; /* Add top padding to account for the larger header */
+}
+
+.subjects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.subject-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.subject-card h3 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+.subject-card p {
+    font-size: 1rem;
+    color: #777777;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
