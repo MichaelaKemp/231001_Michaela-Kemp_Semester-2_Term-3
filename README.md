@@ -1,3 +1,7 @@
+Sure! Below is the updated README with placeholders for screenshots of each page, including those for Students, Teachers, and Admins.
+
+---
+
 # School Administration App
 
 This project is a web-based school administration application built using React for the frontend, MySQL for the database, and XAMPP for local server management.
@@ -12,6 +16,7 @@ This project is a web-based school administration application built using React 
 - [Project Structure](#project-structure)
 - [Pages](#pages)
 - [Demo Video](#demo-video)
+- [Screenshots](#screenshots)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -22,8 +27,6 @@ This project is a web-based school administration application built using React 
 - Student dashboard with assignment submissions, grades, and class enrollment
 - Teacher dashboard with class management, assignment creation, and grading
 - Admin dashboard for user management and class management
-- Notifications system for assignments and class announcements
-- Integrated calendar for tracking important dates
 - Support for managing multiple classes and enrollments
 
 ## Technologies Used
@@ -46,7 +49,7 @@ This project is a web-based school administration application built using React 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/school-admin-app.git
+   git clone https://github.com/MichaelaKemp/231001_Michaela-Kemp_Semester-2_Term-3.git
    cd school-admin-app
    ```
 
@@ -67,9 +70,10 @@ This project is a web-based school administration application built using React 
    - Start Apache and MySQL services.
 
 5. **Configure MySQL:**
-   - Access phpMyAdmin via `http://localhost/phpmyadmin/`.
-   - Create a database named `school_admin_db`.
-   - Import the provided SQL file (`school_admin_db.sql`) to set up the tables.
+   - Copy the provided database file (`school_management`) from the `database` directory in the project to your XAMPP MySQL data folder:
+     - On Windows: Copy the `school_management` file to `C:\xampp\mysql\data`.
+     - On Mac: Copy the file to `/Applications/XAMPP/xamppfiles/var/mysql/`.
+   - Access the database with phpMyAdmin via `http://localhost/phpmyadmin/`.
 
 6. **Configure the backend API:**
    - Ensure the database connection details in `server.js` match your local setup.
@@ -118,7 +122,7 @@ cd ../school-management
 npm start
 ```
 
-This command will start the React development server on port 3000. Open http://localhost:3000 to view the app in your browser.
+This command will start the React development server on port 3000. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
 ## Project Structure
 
@@ -173,72 +177,72 @@ school-admin-app/
 │   ├── node_modules/
 │   ├── package-lock.json
 │   ├── package.json
-│   └── server.js
-└── README.md
+│   ├── server.js
+├── database/
+│   ├── school_management
+└── assets/
+    ├── demo-video.mp4
+    ├── screenshot-login.png
+    ├── screenshot-register.png
+    ├── screenshot-student-home.png
+    ├── screenshot-assignments.png
+    ├── screenshot-class-enrollment.png
+    ├── screenshot-grades.png
+    ├── screenshot-profile.png
+    ├── screenshot-teacher-dashboard.png
+    ├── screenshot-class-management.png
+    ├── screenshot-assignment-management.png
+    ├── screenshot-admin-dashboard.png
+    ├── screenshot-user-management.png
+    ├── screenshot-enrollment-management.png
 ```
 
 ## Pages
 
 ### Frontend (React):
 
-- **Login** (`Login.js`, `Login.css`): User authentication page.
-- **Register** (`Register.js`, `Register.css`): User registration page.
-- **StudentHome** (`StudentHome.js`, `StudentHome.css`): Student dashboard page showing enrolled classes, assignments, and grades.
-
-### Backend (Express):
-
-- **server.js**: Backend server handling API requests and database interactions.
-
+- **Login** (`Login.js`, `Login.css`): User authentication pages.
+  
+- **Register** (`Register.js`, `Register.css`): User registration pages.
+  
 ### Pages for Students:
 
-- **Assignments Page**:
-  - View assignments.
-  - Submit work (linked to `submissions` table).
-  - View grades and feedback on submissions.
+- **StudentHome** (`StudentHome.js`, `StudentHome.css`): Student dashboard page showing enrolled classes, assignments, and grades.
+
+- **Assignments Page** (`Assignments.js`, `Assignments.css`): View assignments, submit work, view grades and feedback on submissions.
   
-- **Class Enrollment**:
-  - View and enroll in available classes (linked to `classes` and `enrollments` tables).
+- **Class Enrollment** (`ClassEnrollment.js`, `ClassEnrollment.css`): View and enroll in available classes.
   
-- **Grades**:
-  - A page to view grades for all assignments across different classes.
+- **Grades** (`Grades.js`, `Grades.css`): A page to view grades for all assignments across different classes.
   
-- **Profile Page**:
-  - Manage personal information and settings.
+- **Profile Page** (`Profile.js`, `Profile.css`): Manage personal information and settings.
 
 ### Pages for Teachers:
 
-- **Teacher Dashboard**:
-  - Overview of classes they are teaching, assignments pending for grading, and recent student activity.
+- **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, and recent student activity.
   
-- **Class Management**:
-  - Create and manage classes (linked to `classes` table).
-  - View class rosters (linked to `students` and `enrollments` tables).
+- **Class Management** (`ClassManagement.js`, `ClassManagement.css`): Create and manage classes, view class rosters.
   
-- **Assignment Management**:
-  - Create, edit, and delete assignments (linked to `assignments` table).
-  - View and grade student submissions (linked to `submissions` table).
-  
-- **Gradebook**:
-  - Manage and enter grades for students (linked to `students` and `submissions` tables).
+- **Assignment Management** (`AssignmentManagement.js`, `AssignmentManagement.css`): Create, edit, and delete assignments, view and grade student submissions.
 
 ### Pages for Admins:
 
-- **Admin Dashboard**:
-  - Overview of user activity, total enrollments, and system statistics.
+- **Admin Dashboard** (`AdminDashboard.js`, `AdminDashboard.css`): Overview of user activity and total enrollments.
   
-- **User Management**:
-  - Add, edit, or remove users (linked to `users`, `students`, and `teachers` tables).
-  - Assign roles to users.
+- **User Management** (`UserManagement.js`, `UserManagement.css`): Add, edit, or remove users, assign roles to users.
+  - ![User Management Screenshot](assets/screenshot-user-management.png)
   
-- **Class Management**:
-  - Oversee all classes, including the ability to add, edit, or remove classes.
+- **Class Management** (`ClassManagement.js`, `ClassManagement.css`): Oversee all classes, including the ability to add, edit, or remove classes..
   
-- **Enrollment Management**:
-  - Manage enrollments across all classes (linked to `enrollments` table).
+- **Enrollment Management** (`EnrollmentManagement.js`, `EnrollmentManagement.css`): Manage enrollments across all classes.
 
 ## Demo Video
 
 [Link to demo video here]
+
+## Screenshots
+
+[Link to screenshots here]
 
 ## Usage
 
@@ -246,14 +250,4 @@ school-admin-app/
 2. **Login** to access the appropriate dashboard based on your role.
 3. **Admin** can manage users and classes.
 4. **Teachers** can create classes, assignments, and grade student submissions.
-5. **Students** can enroll in classes,
-
- submit assignments, and view grades.
-
-## Contributing
-
-Contributions are welcome! Please fork this repository, create a feature branch, and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+5. **Students** can enroll in classes, submit assignments, and view grades.
