@@ -44,7 +44,7 @@ This project is a web-based school administration application built using React 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/MichaelaKemp/231001_Michaela-Kemp_Semester-2_Term-3.git
-   cd school-admin-app
+   cd school-management
    ```
 
 2. **Install frontend dependencies:**
