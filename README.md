@@ -1,7 +1,3 @@
-Sure! Below is the updated README with placeholders for screenshots of each page, including those for Students, Teachers, and Admins.
-
----
-
 # School Administration App
 
 This project is a web-based school administration application built using React for the frontend, MySQL for the database, and XAMPP for local server management.
