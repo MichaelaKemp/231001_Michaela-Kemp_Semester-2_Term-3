@@ -14,8 +14,6 @@ This project is a web-based school administration application built using React 
 - [Demo Video](#demo-video)
 - [Screenshots](#screenshots)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
