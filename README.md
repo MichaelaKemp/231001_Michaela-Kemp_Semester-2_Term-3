@@ -167,20 +167,16 @@ school-admin-app/
 ├── database/
 │   ├── school_management
 └── assets/
-    ├── demo-video.mp4
-    ├── screenshot-login.png
-    ├── screenshot-register.png
-    ├── screenshot-student-home.png
-    ├── screenshot-assignments.png
-    ├── screenshot-class-enrollment.png
-    ├── screenshot-grades.png
-    ├── screenshot-profile.png
-    ├── screenshot-teacher-dashboard.png
-    ├── screenshot-class-management.png
-    ├── screenshot-assignment-management.png
-    ├── screenshot-admin-dashboard.png
-    ├── screenshot-user-management.png
-    ├── screenshot-enrollment-management.png
+    ├── Demo Video.mp4
+    ├── Log In.png
+    ├── Register (01).png
+    ├── Register (02).png
+    ├── Student Dashboard.png
+    ├── Classes.png
+    ├── Assignments.png
+    ├── Grades.png
+    ├── Teacher Dashboard (01).png
+    ├── Teacher Dashboard (02).png
 ```
 
 ## Pages
