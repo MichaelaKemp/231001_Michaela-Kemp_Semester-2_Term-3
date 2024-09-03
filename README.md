@@ -167,7 +167,7 @@ school-admin-app/
 ├── database/
 │   ├── school_management
 └── assets/
-    ├── demo-video.mp4
+    ├── Demo Video.mp4
     ├── Log In.png
     ├── Register (01).png
     ├── Register (02).png
