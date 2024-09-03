@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // Make sure Link is imported here
+import { useParams, Link, useNavigate } from 'react-router-dom'; // Make sure Link is imported here
 import CentralLogo from '../logo/Central Logo.png';
 import './StudentHome.css';
 
@@ -9,6 +9,8 @@ const StudentHome = () => {
   const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
   const [errorMessage, setErrorMessage] = useState(''); // Error message state
+
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
 
   const fetchStudentHomeData = async () => {
     try {
@@ -36,6 +38,12 @@ const StudentHome = () => {
     fetchStudentHomeData();
   };
 
+  const handleLogout = () => {
+    // Perform any logout logic here (e.g., clear authentication tokens, etc.)
+    localStorage.removeItem('authToken'); // Example: Clear auth token
+    navigate('/login'); // Redirect to the login page
+  };
+
   return (
     <div className="student-home-wrapper">
       <nav className="side-navbar">
@@ -46,7 +54,11 @@ const StudentHome = () => {
           <li><Link to={`/classenrollment/${id}`}>Classes</Link></li>
           <li><Link to={`/assignments/${id}`}>Assignments</Link></li>
           <li><Link to={`/grades/${id}`}>Grades</Link></li>
-          <li><a href="/logout">Logout</a></li>
+          <li>
+            <button className="nav-links" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>        
         </ul>
       </nav>
 

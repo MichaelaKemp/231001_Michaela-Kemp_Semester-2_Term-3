@@ -125,10 +125,18 @@ const TeacherDashboard = () => {
     }
   };
 
+  // Handle logout functionality
+  const handleLogout = () => {
+    // Add any additional logout logic (like clearing tokens)
+    alert('Logged out successfully!');
+    window.location.href = 'http://localhost:3000/login'; // Redirect to the login page after logout
+  };
+
   return (
     <div className="teacher-dashboard-wrapper">
       <header className="dashboard-header">
         <h1>Teacher Dashboard</h1>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
       </header>
 
       {loading ? (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import CentralLogo from '../logo/Central Logo.png';
 import './Grades.css'; // Ensure you have this CSS file for styling
 
@@ -8,6 +8,8 @@ const Grades = () => {
   const [grades, setGrades] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
 
   useEffect(() => {
     const fetchGrades = async () => {
@@ -29,17 +31,27 @@ const Grades = () => {
     fetchGrades();
   }, [id]);
 
+  const handleLogout = () => {
+    // Perform any logout logic here (e.g., clear authentication tokens, etc.)
+    localStorage.removeItem('authToken'); // Example: Clear auth token
+    navigate('/login'); // Redirect to the login page
+  };
+
   return (
     <div className="grades-wrapper">
       <nav className="side-navbar">
         <div className="logo-container">
-        <img src={CentralLogo} alt="School Logo" className="logo" />
+            <img src={CentralLogo} alt="School Logo" className="logo" />
         </div>
         <ul className="nav-links">
           <li><Link to={`/studenthome/${id}`}>Dashboard</Link></li>
           <li><a href={`/classenrollment/${id}`}>Classes</a></li>
           <li><Link to={`/assignments/${id}`}>Assignments</Link></li>
-          <li><a href="/logout">Logout</a></li>
+          <li>
+            <button className="nav-links" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>
         </ul>
       </nav>
 

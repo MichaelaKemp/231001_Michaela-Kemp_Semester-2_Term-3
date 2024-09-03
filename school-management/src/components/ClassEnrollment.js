@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -11,6 +11,8 @@ const localizer = momentLocalizer(moment);
 const ClassEnrollment = () => {
   const { id } = useParams();
   const [events, setEvents] = useState([]);
+
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
 
   useEffect(() => {
     const fetchClassData = async () => {
@@ -47,6 +49,12 @@ const ClassEnrollment = () => {
     fetchClassData();
   }, [id]);
 
+  const handleLogout = () => {
+    // Perform any logout logic here (e.g., clear authentication tokens, etc.)
+    localStorage.removeItem('authToken'); // Example: Clear auth token
+    navigate('/login'); // Redirect to the login page
+  };
+
   return (
     <div className="student-home-wrapper">
       <header className="dashboard-header">
@@ -61,7 +69,11 @@ const ClassEnrollment = () => {
           <li><Link to={`/studenthome/${id}`}>Dashboard</Link></li>
           <li><Link to={`/assignments/${id}`}>Assignments</Link></li>
           <li><Link to={`/grades/${id}`}>Grades</Link></li>
-          <li><a href="/logout">Logout</a></li>
+          <li>
+            <button className="nav-links" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>
         </ul>
       </nav>
 
