@@ -17,11 +17,9 @@ This project is a web-based school administration application built using React 
 
 ## Features
 
-- User authentication and authorization (Admin, Teacher, Student)
+- User authentication and authorization (Teacher, Student)
 - Student dashboard with assignment submissions, grades, and class enrollment
 - Teacher dashboard with class management, assignment creation, and grading
-- Admin dashboard for user management and class management
-- Support for managing multiple classes and enrollments
 
 ## Technologies Used
 
@@ -139,8 +137,6 @@ school-admin-app/
 │   │   │   ├── ClassEnrollment.js
 │   │   │   ├── Grades.css
 │   │   │   ├── Grades.js
-│   │   │   ├── Profile.css
-│   │   │   ├── Profile.js
 │   │   │   ├── TeacherDashboard.css
 │   │   │   ├── TeacherDashboard.js
 │   │   │   ├── ClassManagement.css
@@ -149,12 +145,8 @@ school-admin-app/
 │   │   │   ├── AssignmentManagement.js
 │   │   │   ├── Gradebook.css
 │   │   │   ├── Gradebook.js
-│   │   │   ├── AdminDashboard.css
-│   │   │   ├── AdminDashboard.js
-│   │   │   ├── UserManagement.css
-│   │   │   ├── UserManagement.js
-│   │   │   ├── EnrollmentManagement.css
-│   │   │   ├── EnrollmentManagement.js
+│   │   ├── logo/
+│   │   │   ├── Central Logo.SVG
 │   ├── App.css
 │   ├── App.js
 │   ├── App.test.js
@@ -209,8 +201,6 @@ school-admin-app/
   
 - **Grades** (`Grades.js`, `Grades.css`): A page to view grades for all assignments across different classes.
   
-- **Profile Page** (`Profile.js`, `Profile.css`): Manage personal information and settings.
-
 ### Pages for Teachers:
 
 - **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, and recent student activity.
@@ -219,16 +209,6 @@ school-admin-app/
   
 - **Assignment Management** (`AssignmentManagement.js`, `AssignmentManagement.css`): Create, edit, and delete assignments, view and grade student submissions.
 
-### Pages for Admins:
-
-- **Admin Dashboard** (`AdminDashboard.js`, `AdminDashboard.css`): Overview of user activity and total enrollments.
-  
-- **User Management** (`UserManagement.js`, `UserManagement.css`): Add, edit, or remove users, assign roles to users.
-  - ![User Management Screenshot](assets/screenshot-user-management.png)
-  
-- **Class Management** (`ClassManagement.js`, `ClassManagement.css`): Oversee all classes, including the ability to add, edit, or remove classes..
-  
-- **Enrollment Management** (`EnrollmentManagement.js`, `EnrollmentManagement.css`): Manage enrollments across all classes.
 
 ## Demo Video
 
