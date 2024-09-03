@@ -1,0 +1,54 @@
+.grades-wrapper {
+    display: flex;
+  }
+  
+  .side-navbar {
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    text-align: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 15px 0;
+  }
+  
+  .dashboard-wrapper {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 20px;
+  }
+  
+  .grades-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grades-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .grades-section li {
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  

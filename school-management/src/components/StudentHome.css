@@ -2,6 +2,8 @@
     display: flex;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    overflow: hidden; /* Prevent unnecessary scrolling on the body */
 }
 
 .side-navbar {
@@ -16,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto; /* Allow the sidebar to scroll if content overflows */
 }
 
 .logo-container {
@@ -56,18 +59,22 @@
 .dashboard-wrapper {
     margin-left: 200px; /* Account for sidebar width */
     width: calc(100% - 200px); /* Ensure the main content takes the rest of the width */
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Allow the dashboard content to scroll */
     padding: 0;
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .dashboard-header {
     padding: 1rem 2rem; /* Adjust padding to position correctly */
     text-align: left; /* Ensure the text aligns to the left */
-    position: fixed;
+    position: sticky; /* Keep the header at the top as you scroll */
     top: 0;
     left: 200px; /* Align it next to the sidebar */
     right: 0; /* Extend to the right edge */
     z-index: 500; /* Keep it on top of other content */
     border-bottom: none; /* Remove any additional border */
+    background-color: #ffffff; /* Ensure it has a background when scrolling */
 }
 
 .dashboard-header h1 {
@@ -91,6 +98,7 @@
 
 .dashboard {
     padding: 6rem 2rem 2rem 2rem; /* Add top padding to account for the larger header */
+    overflow-y: auto; /* Ensure that content can scroll */
 }
 
 .subjects-container {

@@ -1,0 +1,109 @@
+.assignments-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.side-navbar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+}
+
+.logo-container {
+    margin: 20px 0;
+}
+
+.logo {
+    max-width: 100%;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 10px 0;
+}
+
+.nav-links a,
+.nav-links button { /* Style the button like the links */
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer; /* Ensure the cursor shows as pointer */
+}
+
+.nav-links a:hover,
+.nav-links button:hover { /* Add hover effect for button */
+    background-color: #444;
+}
+
+.dashboard-wrapper {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.dashboard-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.assignments-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    overflow-y: auto; /* Ensure the content can scroll if it overflows */
+}
+
+.assignments-section {
+    margin-bottom: 20px;
+}
+
+.assignments-section h2 {
+    margin-bottom: 10px;
+}
+
+.assignments-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.assignments-section ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer; /* Change the cursor to pointer on hover */
+}
+
+.assignments-section ul li:hover {
+    background-color: #f0f0f0; /* Lighten the background color on hover */
+}
+
+.assignment-details {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}

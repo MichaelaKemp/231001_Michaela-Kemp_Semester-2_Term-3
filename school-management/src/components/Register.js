@@ -10,14 +10,34 @@ const Register = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const [guardianName, setGuardianName] = useState(''); // State for guardian name
-  const [guardianContact, setGuardianContact] = useState(''); // State for guardian contact
-  const [grade, setGrade] = useState(''); // State for grade selection
+  const [guardianName, setGuardianName] = useState('');
+  const [guardianContact, setGuardianContact] = useState('');
+  const [grade, setGrade] = useState('');
+  const [subject, setSubject] = useState('');
+  const [loading, setLoading] = useState(false); // Loading state
+  const [errorMessage, setErrorMessage] = useState(''); // Error message state
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); // Hook for navigation
+  const subjectsByGrade = {
+    1: ['Languages', 'Mathematics', 'Life Skills'],
+    2: ['Languages', 'Mathematics', 'Life Skills'],
+    3: ['Languages', 'Mathematics', 'Life Skills'],
+    4: ['English (Home Language)', 'Afrikaans (First Additional Language)', 'Mathematics', 'Natural Science and Technology', 'Social Sciences (History and Geography)', 'Life Skills'],
+    5: ['English (Home Language)', 'Afrikaans (First Additional Language)', 'Mathematics', 'Natural Science and Technology', 'Social Sciences (History and Geography)', 'Life Skills'],
+    6: ['English (Home Language)', 'Afrikaans (First Additional Language)', 'Mathematics', 'Natural Science and Technology', 'Social Sciences (History and Geography)', 'Life Skills'],
+    7: ['English (Home Language)', 'Afrikaans or isiZulu (First Additional Language)', 'Mathematics', 'Economic and Management Sciences (EMS)', 'Natural Science', 'Social Sciences (History and Geography)', 'Life Orientation', 'Technology', 'Creative Arts (Music, Art, Drama)']
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!username || !email || !password || !firstName || !lastName || !dateOfBirth || (role === 'Student' && (!guardianName || !guardianContact)) || (role !== 'Admin' && !grade) || (role === 'Teacher' && !subject)) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    setLoading(true);
+    setErrorMessage('');
 
     try {
       const response = await fetch('http://localhost:3001/api/register', {
@@ -35,7 +55,8 @@ const Register = () => {
           date_of_birth: dateOfBirth,
           guardian_name: role === 'Student' ? guardianName : null,
           guardian_contact: role === 'Student' ? guardianContact : null,
-          grade_level: role === 'Student' ? grade : null, // Include grade level only if role is "Student"
+          grade_level: grade,
+          subject: role === 'Teacher' ? subject : null,
         }),
       });
 
@@ -43,13 +64,19 @@ const Register = () => {
 
       if (data.success) {
         alert('Registration successful');
-        navigate(`/studenthome/${data.userId}`); // Redirect to StudentHome page with student ID
+        if (role === 'Teacher') {
+          navigate(`/teacher-dashboard/${data.userId}`);
+        } else {
+          navigate(`/studenthome/${data.userId}`);
+        }
       } else {
-        alert('Registration failed: ' + data.message);
+        setErrorMessage(data.message);
       }
     } catch (error) {
       console.error('Error during registration:', error);
-      alert('An error occurred during registration.');
+      setErrorMessage('An error occurred during registration.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,6 +85,7 @@ const Register = () => {
       <div className="register-box">
         <h2>Create an Account</h2>
         <form onSubmit={handleSubmit}>
+          {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error messages */}
           <div className="input-group">
             <label>Username</label>
             <input
@@ -132,7 +160,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Conditional rendering of guardian fields and grade dropdown */}
           {role === 'Student' && (
             <>
               <div className="input-group">
@@ -154,27 +181,46 @@ const Register = () => {
                   onChange={(e) => setGuardianContact(e.target.value)}
                 />
               </div>
-
-              <div className="input-group">
-                <label>Grade Level</label>
-                <select
-                  value={grade}
-                  onChange={(e) => setGrade(e.target.value)}
-                >
-                  <option value="">Select Grade</option>
-                  <option value="1">Grade 1</option>
-                  <option value="2">Grade 2</option>
-                  <option value="3">Grade 3</option>
-                  <option value="4">Grade 4</option>
-                  <option value="5">Grade 5</option>
-                  <option value="6">Grade 6</option>
-                  <option value="7">Grade 7</option>
-                </select>
-              </div>
             </>
           )}
 
-          <button type="submit" className="register-button">Register</button>
+          {(role === 'Student' || role === 'Teacher') && (
+            <div className="input-group">
+              <label>Grade Level</label>
+              <select
+                value={grade}
+                onChange={(e) => setGrade(e.target.value)}
+              >
+                <option value="">Select Grade</option>
+                <option value="1">Grade 1</option>
+                <option value="2">Grade 2</option>
+                <option value="3">Grade 3</option>
+                <option value="4">Grade 4</option>
+                <option value="5">Grade 5</option>
+                <option value="6">Grade 6</option>
+                <option value="7">Grade 7</option>
+              </select>
+            </div>
+          )}
+
+          {role === 'Teacher' && grade && (
+            <div className="input-group">
+              <label>Subject</label>
+              <select
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              >
+                <option value="">Select Subject</option>
+                {subjectsByGrade[grade].map((subj) => (
+                  <option key={subj} value={subj}>{subj}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
+          <button type="submit" className="register-button" disabled={loading}>
+            {loading ? 'Registering...' : 'Register'} {/* Display loading state */}
+          </button>
         </form>
         <p className="login-link">
           Already have an account? <Link to="/login">Log in here</Link>
