@@ -213,6 +213,10 @@ school-admin-app/
 ## Screenshots
 
 ![Assignments](assets/Assignments.png)
+![Classes](assets/Classes.png)
+![Grades](assets/Grades.png)
+![Log In](assets/Log In.png)
+
 
 ## Usage
 
