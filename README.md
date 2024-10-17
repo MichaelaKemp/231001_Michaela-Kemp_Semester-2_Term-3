@@ -212,7 +212,7 @@ school-admin-app/
 
 ## Screenshots
 
-[Link to screenshots here]
+![Assignments](assets/Assignments.png)
 
 ## Usage
 
