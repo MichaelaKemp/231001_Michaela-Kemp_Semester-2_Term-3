@@ -208,14 +208,19 @@ school-admin-app/
 
 ## Demo Video
 
-![Demo Video](assets/Demo Video.mp4)
+![Demo Video](assets/DemoVideo.mp4)
 
 ## Screenshots
 
 ![Assignments](assets/Assignments.png)
 ![Classes](assets/Classes.png)
 ![Grades](assets/Grades.png)
-![Log In](assets/Log In.png)
+![Log In](assets/LogIn.png)
+![Register](assets/Register(01).png)
+![Register](assets/Register(02).png)
+![Student Dashboard](assets/StudentDashboard.png)
+![Teacher Dashboard](assets/TeacherDashboard(01).png)
+![Teacher Dashboard](assets/TeacherDashboard(02).png)
 
 
 ## Usage
