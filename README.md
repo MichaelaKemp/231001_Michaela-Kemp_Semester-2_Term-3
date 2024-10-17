@@ -208,7 +208,7 @@ school-admin-app/
 
 ## Demo Video
 
-[Link to demo video here]
+![Demo Video](assets/Demo Video.mp4)
 
 ## Screenshots
 
