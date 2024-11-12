@@ -213,14 +213,15 @@ school-admin-app/
 ## Screenshots
 
 ![Assignments](assets/Assignments.png)
-![Classes](assets/Classes.png)
+![Classes](assets/Classes(01).png)
+![Classes](assets/Classes(02).png)
 ![Grades](assets/Grades.png)
 ![Log In](assets/LogIn.png)
 ![Register](assets/Register(01).png)
 ![Register](assets/Register(02).png)
-![Student Dashboard](assets/StudentDashboard.png)
-![Teacher Dashboard](assets/TeacherDashboard(01).png)
-![Teacher Dashboard](assets/TeacherDashboard(02).png)
+![Student Dashboard](assets/StudentDashboard(01).png)
+![Student Dashboard](assets/StudentDashboard(02).png)
+![Teacher Dashboard](assets/TeacherDashboard.png)
 
 
 ## Usage
