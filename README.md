@@ -81,6 +81,10 @@ Your database should have the following tables:
 - **enrollments**: Tracks which students are enrolled in which classes.
 - **assignments**: Stores assignment details.
 - **submissions**: Tracks student submissions for assignments.
+- **attendance**: Tracks student attendance.
+- **activity_log**: Stores activity within the application.
+- **announcement**: Manages announcements to users.
+
 
 ### Sample SQL for Table Creation
 
@@ -189,21 +193,17 @@ school-admin-app/
   
 ### Pages for Students:
 
-- **StudentHome** (`StudentHome.js`, `StudentHome.css`): Student dashboard page showing enrolled classes, assignments, and grades.
+- **StudentDashboard** (`StudentDashboard.js`, `StudentDashboard.css`): Student dashboard page showing enrolled classes, assignments, and grades.
 
-- **Assignments Page** (`Assignments.js`, `Assignments.css`): View assignments, submit work, view grades and feedback on submissions.
+- **Assignments Page** (`StudentAssignments.js`, `StudentAssignments.css`): View assignments, submit work, view grades and feedback on submissions.
   
-- **Class Enrollment** (`ClassEnrollment.js`, `ClassEnrollment.css`): View and enroll in available classes.
+- **Class Enrollment** (`StudentClasses.js`, `StudentClasses.css`): View and enroll in available classes.
   
-- **Grades** (`Grades.js`, `Grades.css`): A page to view grades for all assignments across different classes.
+- **Grades** (`StudentGrades.js`, `Studentgrades.css`): A page to view grades for all assignments across different classes.
   
 ### Pages for Teachers:
 
-- **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, and recent student activity.
-  
-- **Class Management** (`ClassManagement.js`, `ClassManagement.css`): Create and manage classes, view class rosters.
-  
-- **Assignment Management** (`AssignmentManagement.js`, `AssignmentManagement.css`): Create, edit, and delete assignments, view and grade student submissions.
+- **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, management of assignments and their students.
 
 
 ## Demo Video
