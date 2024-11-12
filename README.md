@@ -1,4 +1,4 @@
-# School Administration App
+# Central
 
 This project is a web-based school administration application built using React for the frontend, MySQL for the database, and XAMPP for local server management.
 
@@ -129,22 +129,22 @@ school-admin-app/
 │   │   │   ├── Login.js
 │   │   │   ├── Register.css
 │   │   │   ├── Register.js
-│   │   │   ├── StudentHome.css
-│   │   │   ├── StudentHome.js
-│   │   │   ├── Assignments.css
-│   │   │   ├── Assignments.js
-│   │   │   ├── ClassEnrollment.css
-│   │   │   ├── ClassEnrollment.js
-│   │   │   ├── Grades.css
-│   │   │   ├── Grades.js
+│   │   │   ├── StudentDashboard.css
+│   │   │   ├── StudentDashboard.js
+│   │   │   ├── StudentAssignments.css
+│   │   │   ├── StudentAssignments.js
+│   │   │   ├── StudentClasses.css
+│   │   │   ├── StudentClasses.js
+│   │   │   ├── StudentGrades.css
+│   │   │   ├── StudentGrades.js
 │   │   │   ├── TeacherDashboard.css
 │   │   │   ├── TeacherDashboard.js
-│   │   │   ├── ClassManagement.css
-│   │   │   ├── ClassManagement.js
-│   │   │   ├── AssignmentManagement.css
-│   │   │   ├── AssignmentManagement.js
-│   │   │   ├── Gradebook.css
-│   │   │   ├── Gradebook.js
+│   │   │   ├── TeacherClasses.css
+│   │   │   ├── TeacherClasses.js
+│   │   │   ├── TeacherAssignments.css
+│   │   │   ├── TeacherAssignments.js
+│   │   │   ├── TeacherGrades.css
+│   │   │   ├── TeacherGrades.js
 │   │   ├── logo/
 │   │   │   ├── Central Logo.SVG
 │   ├── App.css
