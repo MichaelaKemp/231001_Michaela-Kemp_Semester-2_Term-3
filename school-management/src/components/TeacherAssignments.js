@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './AssignmentManagement.css';
+import './TeacherAssignments.css';
 
-const AssignmentManagement = ({ assignments = [], onDeleteAssignment, onEditAssignment, onAddAssignment, onGradeSubmission }) => {
+const TeacherAssignments = ({ assignments = [], onDeleteAssignment, onEditAssignment, onAddAssignment, onGradeSubmission }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editAssignment, setEditAssignment] = useState(null);
   const [newAssignment, setNewAssignment] = useState({ title: '', description: '', due_date: '', class_id: '' });
@@ -62,4 +62,4 @@ const AssignmentManagement = ({ assignments = [], onDeleteAssignment, onEditAssi
   );
 };
 
-export default AssignmentManagement;
+export default TeacherAssignments;

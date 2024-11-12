@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
-import StudentHome from './components/StudentHome';
-import ClassEnrollment from './components/ClassEnrollment';
-import Assignments from './components/Assignments';
-import Grades from './components/Grades';
+import StudentDashboard from './components/StudentDashboard';
+import StudentClasses from './components/StudentClasses';
+import StudentAssignments from './components/StudentAssignments';
+import StudentGrades from './components/StudentGrades';
 import TeacherDashboard from './components/TeacherDashboard';
-import ClassManagement from './components/ClassManagement';
-import AssignmentManagement from './components/AssignmentManagement';
-import Gradebook from './components/Gradebook';
+import TeacherClasses from './components/TeacherClasses';
+import TeacherAssignments from './components/TeacherAssignments';
+import TeacherGrades from './components/TeacherGrades';
 
 const App = () => {
   return (
@@ -17,14 +17,14 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/studenthome/:id" element={<StudentHome />} />
-        <Route path="/classenrollment/:id" element={<ClassEnrollment />} />
-        <Route path="/assignments/:id" element={<Assignments />} />
-        <Route path="/grades/:id" element={<Grades />} />
+        <Route path="/studentdashboard/:id" element={<StudentDashboard />} />
+        <Route path="/studentclasses/:id" element={<StudentClasses />} />
+        <Route path="/studentassignments/:id" element={<StudentAssignments />} />
+        <Route path="/studentgrades/:id" element={<StudentGrades />} />
         <Route path="/teacherdashboard/:id" element={<TeacherDashboard />} />
-        <Route path="/class-management/:id" element={<ClassManagement />} /> {/* Route for ClassManagement */}
-        <Route path="/assignment-management/:id" element={<AssignmentManagement />} /> {/* Route for AssignmentManagement */}
-        <Route path="/gradebook/:id" element={<Gradebook />} /> {/* Route for Gradebook */}
+        <Route path="/teacherclasses/:id" element={<TeacherClasses />} /> {/* Route for ClassManagement */}
+        <Route path="/teacherassignments/:id" element={<TeacherAssignments />} /> {/* Route for AssignmentManagement */}
+        <Route path="/teachergrades/:id" element={<TeacherGrades />} /> {/* Route for Gradebook */}
         <Route path="/" element={<Login />} />
       </Routes>
     </Router>

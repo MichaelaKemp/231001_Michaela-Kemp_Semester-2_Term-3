@@ -65,9 +65,9 @@ const Register = () => {
       if (data.success) {
         alert('Registration successful');
         if (role === 'Teacher') {
-          navigate(`/teacher-dashboard/${data.userId}`);
+          navigate(`/teacherdashboard/${data.userId}`);
         } else {
-          navigate(`/studenthome/${data.userId}`);
+          navigate(`/studentdashboard/${data.userId}`);
         }
       } else {
         setErrorMessage(data.message);

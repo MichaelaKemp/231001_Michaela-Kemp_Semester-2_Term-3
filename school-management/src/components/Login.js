@@ -35,7 +35,7 @@ const Login = () => {
         const { id, role } = data.user;
 
         if (role === 'student') {
-          navigate(`/studenthome/${id}`);
+          navigate(`/studentdashboard/${id}`);
         } else if (role === 'teacher') {
           navigate(`/teacherdashboard/${id}`);
         } else {

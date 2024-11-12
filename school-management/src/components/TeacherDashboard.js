@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ClassManagement from './ClassManagement';
-import AssignmentManagement from './AssignmentManagement';
-import Gradebook from './Gradebook';
+import TeacherClasses from './TeacherClasses';
+import TeacherAssignments from './TeacherAssignments';
+import TeacherGrades from './TeacherGrades';
 import './TeacherDashboard.css';
 
 const TeacherDashboard = () => {
@@ -159,10 +159,10 @@ const TeacherDashboard = () => {
             )}
           </div>
           <div className="dashboard-section submission-card">
-            <Gradebook submissions={submissions} /> {/* Display submissions here */}
+            <TeacherGrades submissions={submissions} /> {/* Display submissions here */}
           </div>
           <div className="dashboard-section assignment-card">
-            <AssignmentManagement
+            <TeacherAssignments
               assignments={assignments}
               onEditAssignment={handleEditAssignment}  // Pass the function here
               onAddAssignment={handleAddAssignment}  // Pass the onAddAssignment function here

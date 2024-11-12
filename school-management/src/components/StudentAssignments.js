@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import CentralLogo from '../logo/Central Logo.png';
-import './Assignments.css'; // Ensure you have this CSS file for styling
+import './StudentAssignments.css'; // Ensure you have this CSS file for styling
 
-const Assignments = () => {
+const StudentAssignments = () => {
   const { id } = useParams(); // Assuming `id` is the student ID from the route
   const [overdue, setOverdue] = useState([]);
   const [comingUp, setComingUp] = useState([]);
@@ -88,13 +88,12 @@ const Assignments = () => {
         <img src={CentralLogo} alt="School Logo" className="logo" />
         </div>
         <ul className="nav-links">
-          <li><Link to={`/studenthome/${id}`}>Dashboard</Link></li>
-          <li><a href={`/classenrollment/${id}`}>Classes</a></li>
-          <li><Link to={`/grades/${id}`}>Grades</Link></li>
+          <li><Link to={`/studentdashboard/${id}`} data-icon="🏠">Dashboard</Link></li>
+          <li><Link to={`/studentclasses/${id}`} data-icon="📚">Classes</Link></li>
+          <li><Link to={`/studentassignments/${id}`} data-icon="📝">Assignments</Link></li>
+          <li><Link to={`/studentgrades/${id}`} data-icon="🏆">Grades</Link></li>
           <li>
-            <button className="nav-links" onClick={handleLogout}>
-              Logout
-            </button>
+            <button className="nav-links" data-icon="🔒" onClick={handleLogout}>Logout</button>
           </li>
         </ul>
       </nav>
@@ -183,4 +182,4 @@ const Assignments = () => {
   );
 };
 
-export default Assignments;
+export default StudentAssignments;

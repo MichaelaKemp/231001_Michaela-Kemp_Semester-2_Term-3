@@ -1,7 +1,7 @@
 import React from 'react';
-import './Gradebook.css';
+import './TeacherGrades.css';
 
-const Gradebook = ({ submissions = [] }) => (
+const TeacherGrades = ({ submissions = [] }) => (
   <div className="gradebook">
     <h2>Gradebook</h2>
     {submissions.length > 0 ? (
@@ -20,4 +20,4 @@ const Gradebook = ({ submissions = [] }) => (
   </div>
 );
 
-export default Gradebook;
+export default TeacherGrades;

@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 // MySQL database connection
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'micky', // Your MySQL username
-  password: 'password', // Your MySQL password
+  user: 'dev_user', // Use the new user
+  password: 'dev_password', // Use the new user's password
   database: 'school_management',
 });
 
@@ -491,6 +491,92 @@ app.get('/api/teacher/class/:userId', (req, res) => {
         });
       });
     });
+  });
+});
+
+app.get('/api/announcements', (req, res) => {
+  const announcementsQuery = `
+    SELECT id, title, content, created_at 
+    FROM announcements 
+    ORDER BY created_at DESC 
+    LIMIT 5
+  `;
+
+  db.query(announcementsQuery, (err, results) => {
+    if (err) {
+      console.error('Error fetching announcements:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/activity/:userId', (req, res) => {
+  const userId = req.params.userId;
+  const activityQuery = `
+    SELECT activity_type, details, created_at 
+    FROM activity_log 
+    WHERE user_id = ? 
+    ORDER BY created_at DESC 
+    LIMIT 5
+  `;
+
+  db.query(activityQuery, [userId], (err, results) => {
+    if (err) {
+      console.error('Error fetching activity log:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/attendance/:studentId', (req, res) => {
+  const studentId = req.params.studentId;
+  const attendanceQuery = `
+    SELECT COUNT(*) AS total_classes,
+           SUM(status = 'present') AS total_present,
+           ROUND((SUM(status = 'present') / COUNT(*)) * 100, 2) AS attendance_rate
+    FROM attendance
+    WHERE student_id = ?
+  `;
+
+  db.query(attendanceQuery, [studentId], (err, results) => {
+    if (err) {
+      console.error('Error fetching attendance summary:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+    res.json(results[0]);
+  });
+});
+
+app.get('/api/performance/:studentId', (req, res) => {
+  const studentId = req.params.studentId;
+  const performanceQuery = `
+    SELECT 
+      c.class_name, 
+      AVG(
+        CASE 
+          WHEN s.grade = 'A' THEN 90
+          WHEN s.grade = 'B' THEN 80
+          WHEN s.grade = 'C' THEN 70
+          WHEN s.grade = 'D' THEN 60
+          WHEN s.grade = 'F' THEN 50
+          ELSE NULL
+        END
+      ) AS average_grade
+    FROM submissions s
+    JOIN assignments a ON s.assignment_id = a.id
+    JOIN classes c ON a.class_id = c.id
+    WHERE s.student_id = ?
+    GROUP BY c.class_name;
+  `;
+
+  db.query(performanceQuery, [studentId], (err, results) => {
+    if (err) {
+      console.error('Error fetching class performance:', err);
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+    res.json(results);
   });
 });
 

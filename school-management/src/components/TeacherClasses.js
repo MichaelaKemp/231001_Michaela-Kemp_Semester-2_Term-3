@@ -1,7 +1,7 @@
 import React from 'react';
-import './AssignmentManagement.css';
+import './TeacherClasses.css';
 
-const AssignmentManagement = ({ assignments = [], onDelete, onUpdate }) => (
+const TeacherClasses = ({ assignments = [], onDelete, onUpdate }) => (
   <div className="assignment-management">
     <h2>Assignments</h2>
     {assignments.length > 0 ? (
@@ -39,4 +39,4 @@ const SubmissionList = ({ submissions = [] }) => (
   </div>
 );
 
-export default AssignmentManagement;
+export default TeacherClasses;
