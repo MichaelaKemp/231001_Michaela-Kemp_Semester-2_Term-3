@@ -1,4 +1,4 @@
-# School Administration App
+# Central
 
 This project is a web-based school administration application built using React for the frontend, MySQL for the database, and XAMPP for local server management.
 
@@ -81,6 +81,10 @@ Your database should have the following tables:
 - **enrollments**: Tracks which students are enrolled in which classes.
 - **assignments**: Stores assignment details.
 - **submissions**: Tracks student submissions for assignments.
+- **attendance**: Tracks student attendance.
+- **activity_log**: Stores activity within the application.
+- **announcement**: Manages announcements to users.
+
 
 ### Sample SQL for Table Creation
 
@@ -129,22 +133,22 @@ school-admin-app/
 │   │   │   ├── Login.js
 │   │   │   ├── Register.css
 │   │   │   ├── Register.js
-│   │   │   ├── StudentHome.css
-│   │   │   ├── StudentHome.js
-│   │   │   ├── Assignments.css
-│   │   │   ├── Assignments.js
-│   │   │   ├── ClassEnrollment.css
-│   │   │   ├── ClassEnrollment.js
-│   │   │   ├── Grades.css
-│   │   │   ├── Grades.js
+│   │   │   ├── StudentDashboard.css
+│   │   │   ├── StudentDashboard.js
+│   │   │   ├── StudentAssignments.css
+│   │   │   ├── StudentAssignments.js
+│   │   │   ├── StudentClasses.css
+│   │   │   ├── StudentClasses.js
+│   │   │   ├── StudentGrades.css
+│   │   │   ├── StudentGrades.js
 │   │   │   ├── TeacherDashboard.css
 │   │   │   ├── TeacherDashboard.js
-│   │   │   ├── ClassManagement.css
-│   │   │   ├── ClassManagement.js
-│   │   │   ├── AssignmentManagement.css
-│   │   │   ├── AssignmentManagement.js
-│   │   │   ├── Gradebook.css
-│   │   │   ├── Gradebook.js
+│   │   │   ├── TeacherClasses.css
+│   │   │   ├── TeacherClasses.js
+│   │   │   ├── TeacherAssignments.css
+│   │   │   ├── TeacherAssignments.js
+│   │   │   ├── TeacherGrades.css
+│   │   │   ├── TeacherGrades.js
 │   │   ├── logo/
 │   │   │   ├── Central Logo.SVG
 │   ├── App.css
@@ -189,30 +193,36 @@ school-admin-app/
   
 ### Pages for Students:
 
-- **StudentHome** (`StudentHome.js`, `StudentHome.css`): Student dashboard page showing enrolled classes, assignments, and grades.
+- **StudentDashboard** (`StudentDashboard.js`, `StudentDashboard.css`): Student dashboard page showing enrolled classes, assignments, and grades.
 
-- **Assignments Page** (`Assignments.js`, `Assignments.css`): View assignments, submit work, view grades and feedback on submissions.
+- **Assignments Page** (`StudentAssignments.js`, `StudentAssignments.css`): View assignments, submit work, view grades and feedback on submissions.
   
-- **Class Enrollment** (`ClassEnrollment.js`, `ClassEnrollment.css`): View and enroll in available classes.
+- **Class Enrollment** (`StudentClasses.js`, `StudentClasses.css`): View and enroll in available classes.
   
-- **Grades** (`Grades.js`, `Grades.css`): A page to view grades for all assignments across different classes.
+- **Grades** (`StudentGrades.js`, `Studentgrades.css`): A page to view grades for all assignments across different classes.
   
 ### Pages for Teachers:
 
-- **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, and recent student activity.
-  
-- **Class Management** (`ClassManagement.js`, `ClassManagement.css`): Create and manage classes, view class rosters.
-  
-- **Assignment Management** (`AssignmentManagement.js`, `AssignmentManagement.css`): Create, edit, and delete assignments, view and grade student submissions.
+- **Teacher Dashboard** (`TeacherDashboard.js`, `TeacherDashboard.css`): Overview of classes they are teaching, assignments pending for grading, management of assignments and their students.
 
 
 ## Demo Video
 
-[Link to demo video here]
+![Demo Video](assets/DemoVideo.mp4)
 
 ## Screenshots
 
-[Link to screenshots here]
+![Assignments](assets/Assignments.png)
+![Classes](assets/Classes(01).png)
+![Classes](assets/Classes(02).png)
+![Grades](assets/Grades.png)
+![Log In](assets/LogIn.png)
+![Register](assets/Register(01).png)
+![Register](assets/Register(02).png)
+![Student Dashboard](assets/StudentDashboard(01).png)
+![Student Dashboard](assets/StudentDashboard(02).png)
+![Teacher Dashboard](assets/TeacherDashboard.png)
+
 
 ## Usage
 
